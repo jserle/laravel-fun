@@ -17,12 +17,15 @@
         var appCsrfToken = '{{ csrf_token() }}';
     </script>
 </head>
-<body>
+<body ng-app="funApp">
     <div id="app">
         @yield('content')
     </div>
 
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/components/product-list.directive.js') }}"></script>
+    <script src="{{ asset('js/components/product-form.directive.js') }}"></script>
 </body>
 </html>

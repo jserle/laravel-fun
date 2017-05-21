@@ -10,25 +10,19 @@
                 </div>
 
                 <div class="panel-body">
-                    <form action="/products" method="POST">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <label for="name">Product Name:</label>
-                            <input type="text" class="form-control" name="name" id="name">
-                        </div>
+                    <product-form></product-form>
+                </div>
+            </div>
+        </div>
 
-                        <div class="form-group">
-                            <label for="qoh">Quantity In Stock:</label>
-                            <input type="text" class="form-control" name="qoh" id="qoh">
-                        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>Product List</h2>
+                </div>
 
-                        <div class="form-group">
-                            <label for="price_per_item">Price Per Item:</label>
-                            <input type="text" class="form-control" name="price_per_item" id="price_per_item">
-                        </div>
-
-                        <button type="submit" class="btn btn-default">Save</button>
-                    </form>
+                <div class="panel-body">
+                    <product-list></product-list>
                 </div>
             </div>
         </div>
