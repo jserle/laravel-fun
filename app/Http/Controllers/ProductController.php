@@ -10,7 +10,13 @@ class ProductController extends Controller
 {
     public function index(ProductJsonFileService $productJsonFileService)
     {
-        return $productJsonFileService->loadAllProducts();
+        $products = $productJsonFileService->loadAllProducts();
+
+        foreach ($products as &$product) {
+
+        }
+
+        return $products;
     }
 
     public function store(Request $request, ProductJsonFileService $productJsonFileService)

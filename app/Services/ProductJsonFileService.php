@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Product;
+use Carbon\Carbon;
 
 class ProductJsonFileService
 {
@@ -29,7 +30,7 @@ class ProductJsonFileService
     public function saveProduct(Product $product)
     {
         $currentProducts = $this->loadAllProducts();
-        $currentProducts[] = $product->toArray();
+        $currentProducts[] = $product->toArray() + ['created' => Carbon::now(), 'value' => $product->qoh * $product->price_per_item];
         $this->writeBuffer = $currentProducts;
         $this->writeProductData();
     }

@@ -9,6 +9,6 @@ class Product extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'name', 'qoh', 'price_per_item'
+        'name', 'qoh', 'price_per_item', 'created'
     ];
 }
