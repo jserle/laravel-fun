@@ -10,7 +10,14 @@
                 </div>
 
                 <div class="panel-body">
+                    <form action="/products" method="POST">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="product_name" id="product_name">
+                        </div>
 
+                        <button type="submit" class="btn btn-default">Reply</button>
+                    </form>
                 </div>
             </div>
         </div>
