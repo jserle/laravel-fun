@@ -13,8 +13,11 @@ class ProductController extends Controller
         return $productJsonFileService->loadAllProducts();
     }
 
-    public function store(Product $product)
+    public function store(Request $request, ProductJsonFileService $productJsonFileService)
     {
-        $product->save();
+        $data = $request->toArray();
+        $product = new Product();
+        $product->fill($data);
+        $productJsonFileService->saveProduct($product);
     }
 }

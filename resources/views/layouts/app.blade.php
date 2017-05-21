@@ -12,6 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script>
+        var appCsrfToken = '{{ csrf_token() }}';
+    </script>
 </head>
 <body>
     <div id="app">
